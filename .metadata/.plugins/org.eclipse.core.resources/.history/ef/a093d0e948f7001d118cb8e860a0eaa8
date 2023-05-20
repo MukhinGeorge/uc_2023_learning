@@ -38,55 +38,22 @@ void init_GPIOC(){
 	RCC->AHBENR|=RCC_AHBENR_GPIOCEN;
 	GPIOC->MODER|=GPIO_MODER_MODER9_0;
 }
-void TIM1_IRQHandler(void){
-	if(TIM1->SR & TIM_SR_UIF){
-		TIM1->SR &= ~TIM_SR_UIF;
-		GPIOC->BSRR|=GPIO_BSRR_BR_9;
-		for(int i=0; i<500000; i++);//???question about delaying by timer
-	}
-}
-void TIM6_IRQHandler(void){
-	//Check Update Interrupt Flag (UIF) in State Register (SR) our TIM6
-	if(TIM6->SR & TIM_SR_UIF){
-		//Reset the bit in SR responsible for UIF
-		TIM6->SR &= ~TIM_SR_UIF;
-		//Reset the Output Mode of GPIOC
-		GPIOC->BSRR|=GPIO_BSRR_BR_9;
-		TIM1->CR1|=TIM_CR1_CEN;
-		TIM1->CR1|=TIM_CR1_OPM;
 
+void TIM6_IRQHandler(void){
+	if(TIM6->SR & TIM_SR_UIF){
+		TIM6->SR &= ~TIM_SR_UIF;
+		GPIOC->BSRR|=GPIO_BSRR_BR_9;
+		for(int i=0; i<50000; i++);
 	}
 }
 void TIM6_Init(void){
-	//Activate clocking
 	RCC->APB1ENR|=RCC_APB1ENR_TIM6EN;
-	//Setting Prescaler
 	TIM6->PSC=900;
-	//Setting Autoreload
 	TIM6->ARR=9000;
-	//Enable interrupts in the timer enable register
 	TIM6->DIER |= TIM_DIER_UIE;
-	//Enable interrupts in the interrupt controller register (NVIC - Nested Vectored Interrupt Controller)
 	NVIC_EnableIRQ(TIM6_IRQn);
-	//Assign priority of interruption (the higher the number, the higher the priority)
 	NVIC_SetPriority(TIM6_IRQn, 2);
-	//Set the timer mode
 	TIM6->CR1 |= TIM_CR1_CEN;
-
-}
-void TIM1_Init(void){
-	RCC->APB2ENR|=RCC_APB2ENR_TIM1EN;
-	//Set internal clocking, APB2 bus. Reset the three least significant bits of the register TIMx_SMCR. TIM1 will be in slave mode to APB2 bus.
-	TIM1->SMCR &= ~TIM_SMCR_SMS;
-	TIM1->PSC=900;
-	TIM1->ARR=1000;
-	TIM1->DIER|=TIM_DIER_UIE;
-	NVIC_EnableIRQ(TIM1_BRK_UP_TRG_COM_IRQn);
-	NVIC_SetPriority(TIM1_BRK_UP_TRG_COM_IRQn,1);
-	//Enable One pulse mode
-
-
-
 }
 /**
 **===========================================================================
@@ -102,7 +69,6 @@ int main(void)
   /* TODO - Add your application code here */
 	init_GPIOC();
 	TIM6_Init();
-	TIM1_Init();
 
   /* Infinite loop */
   while (1)
