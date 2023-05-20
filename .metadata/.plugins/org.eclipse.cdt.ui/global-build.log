@@ -1,15 +1,2 @@
-23:04:49 **** Incremental Build of configuration Debug for project TIM6_BLINKING ****
-Info: Internal Builder is used for build
-arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m0 -std=gnu11 -DSTM32F051x8 -DHSI48_VALUE=((uint32_t)48000000) -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/STM32F0xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
-arm-atollic-eabi-gcc -o TIM6_BLINKING.elf src\main.o src\startup_stm32f051x8.o src\system_stm32f0xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m0 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=TIM6_BLINKING.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
-C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list TIM6_BLINKING.elf 
-Generate build reports...
-Print size information
-   text	   data	    bss	    dec	    hex	filename
-   1188	      8	    156	   1352	    548	TIM6_BLINKING.elf
-Print size information done
-Generate listing file
-Output sent to: TIM6_BLINKING.list
-Generate listing file done
-Generate build reports done
+Info: Nothing to build for TIM6_BLINKING
 Info: Nothing to build for TIM6_BLINKING

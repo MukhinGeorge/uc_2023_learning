@@ -6714,7 +6714,7 @@ typedef struct
 #define PVD_VDDIO2_IRQHandler            PVD_IRQHandler
 #define RCC_CRS_IRQHandler               RCC_IRQHandler
 #define TIM6_IRQHandler                  TIM6_DAC_IRQHandler
-#define TIM1_IRQHandler                  TIM1_BRK_UP_TRG_COM_IRQHandler
+
 
 #ifdef __cplusplus
 }
