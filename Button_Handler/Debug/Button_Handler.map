@@ -68,7 +68,7 @@ Discarded input sections
                 0x00000000       0x60 src\tiny_printf.o
  .debug_ranges  0x00000000       0x50 src\tiny_printf.o
  .debug_line    0x00000000      0x2bf src\tiny_printf.o
- .debug_str     0x00000000      0x659 src\tiny_printf.o
+ .debug_str     0x00000000      0x66a src\tiny_printf.o
  .comment       0x00000000       0x7d src\tiny_printf.o
  .debug_frame   0x00000000      0x140 src\tiny_printf.o
  .ARM.attributes
@@ -356,10 +356,10 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.3.0/armtools/bin/../l
                 0x000000f9       0x1e c:/program files (x86)/atollic/truestudio for stm32 9.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtn.o
 OUTPUT(Button_Handler.elf elf32-littlearm)
 
-.debug_info     0x00000000      0x558
+.debug_info     0x00000000      0x569
  .debug_info    0x00000000      0x2a3 src\main.o
- .debug_info    0x000002a3       0x6b src\startup_stm32f051x8.o
- .debug_info    0x0000030e      0x24a src\system_stm32f0xx.o
+ .debug_info    0x000002a3       0x7c src\startup_stm32f051x8.o
+ .debug_info    0x0000031f      0x24a src\system_stm32f0xx.o
 
 .debug_abbrev   0x00000000      0x1df
  .debug_abbrev  0x00000000       0xd0 src\main.o
@@ -384,11 +384,11 @@ OUTPUT(Button_Handler.elf elf32-littlearm)
  .debug_line    0x000001a1       0x7f src\startup_stm32f051x8.o
  .debug_line    0x00000220      0x1b8 src\system_stm32f0xx.o
 
-.debug_str      0x00000000      0x270
- .debug_str     0x00000000      0x216 src\main.o
-                                0x25b (size before relaxing)
- .debug_str     0x00000216       0x5a src\system_stm32f0xx.o
-                                0x25a (size before relaxing)
+.debug_str      0x00000000      0x281
+ .debug_str     0x00000000      0x227 src\main.o
+                                0x26c (size before relaxing)
+ .debug_str     0x00000227       0x5a src\system_stm32f0xx.o
+                                0x26b (size before relaxing)
 
 .comment        0x00000000       0x7c
  .comment       0x00000000       0x7c src\main.o

@@ -42,7 +42,7 @@ void TIM1_IRQHandler(void){
 	if(TIM1->SR & TIM_SR_UIF){
 		TIM1->SR &= ~TIM_SR_UIF;
 		GPIOC->BSRR|=GPIO_BSRR_BR_9;
-		for(int i=0; i<500000; i++);//???question about delaying by timer
+		//for(int i=0; i<500000; i++);//???question about delaying by timer
 	}
 }
 void TIM6_IRQHandler(void){
@@ -51,7 +51,7 @@ void TIM6_IRQHandler(void){
 		//Reset the bit in SR responsible for UIF
 		TIM6->SR &= ~TIM_SR_UIF;
 		//Reset the Output Mode of GPIOC
-		GPIOC->BSRR|=GPIO_BSRR_BR_9;
+
 		TIM1->CR1|=TIM_CR1_CEN;
 		TIM1->CR1|=TIM_CR1_OPM;
 
@@ -79,7 +79,7 @@ void TIM1_Init(void){
 	//Set internal clocking, APB2 bus. Reset the three least significant bits of the register TIMx_SMCR. TIM1 will be in slave mode to APB2 bus.
 	TIM1->SMCR &= ~TIM_SMCR_SMS;
 	TIM1->PSC=900;
-	TIM1->ARR=1000;
+	TIM1->ARR=15000;
 	TIM1->DIER|=TIM_DIER_UIE;
 	NVIC_EnableIRQ(TIM1_BRK_UP_TRG_COM_IRQn);
 	NVIC_SetPriority(TIM1_BRK_UP_TRG_COM_IRQn,1);
