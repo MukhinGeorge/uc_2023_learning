@@ -13,4 +13,5 @@ void TIM6_IRQHandler(void);
 void initEXTI0(void);
 void initGPIO(void);
 void initTIM6(void);
+
 #endif /* INIT_H_ */
