@@ -1,0 +1,26 @@
+/*
+ * Initialization.h
+ *
+ *  Created on: 25 мая 2023 г.
+ *      Author: goodg
+ */
+
+#ifndef INITIALIZATION_H_
+#define INITIALIZATION_H_
+
+
+
+#endif /* INITIALIZATION_H_ */
+#include "stm32f0xx.h"
+
+
+void EXTI0_1_IRQHandler(void);
+
+void TIM6_IRQHandler(void);
+
+void initEXTI0(void);
+
+void initGPIO(void);
+
+void initTIM6(void);
+
