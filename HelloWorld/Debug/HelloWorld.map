@@ -68,7 +68,7 @@ Discarded input sections
                 0x00000000       0x60 src\tiny_printf.o
  .debug_ranges  0x00000000       0x50 src\tiny_printf.o
  .debug_line    0x00000000      0x2bf src\tiny_printf.o
- .debug_str     0x00000000      0x655 src\tiny_printf.o
+ .debug_str     0x00000000      0x666 src\tiny_printf.o
  .comment       0x00000000       0x7d src\tiny_printf.o
  .debug_frame   0x00000000      0x140 src\tiny_printf.o
  .ARM.attributes
@@ -353,10 +353,10 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.3.0/armtools/bin/../l
                 0x000000f9       0x1e c:/program files (x86)/atollic/truestudio for stm32 9.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv6-m/crtn.o
 OUTPUT(HelloWorld.elf elf32-littlearm)
 
-.debug_info     0x00000000      0x578
+.debug_info     0x00000000      0x589
  .debug_info    0x00000000      0x2c7 src\main.o
- .debug_info    0x000002c7       0x67 src\startup_stm32f051x8.o
- .debug_info    0x0000032e      0x24a src\system_stm32f0xx.o
+ .debug_info    0x000002c7       0x78 src\startup_stm32f051x8.o
+ .debug_info    0x0000033f      0x24a src\system_stm32f0xx.o
 
 .debug_abbrev   0x00000000      0x204
  .debug_abbrev  0x00000000       0xf5 src\main.o
@@ -381,11 +381,11 @@ OUTPUT(HelloWorld.elf elf32-littlearm)
  .debug_line    0x000001ab       0x7f src\startup_stm32f051x8.o
  .debug_line    0x0000022a      0x1b8 src\system_stm32f0xx.o
 
-.debug_str      0x00000000      0x261
- .debug_str     0x00000000      0x207 src\main.o
-                                0x24c (size before relaxing)
- .debug_str     0x00000207       0x5a src\system_stm32f0xx.o
-                                0x256 (size before relaxing)
+.debug_str      0x00000000      0x272
+ .debug_str     0x00000000      0x218 src\main.o
+                                0x25d (size before relaxing)
+ .debug_str     0x00000218       0x5a src\system_stm32f0xx.o
+                                0x267 (size before relaxing)
 
 .comment        0x00000000       0x7c
  .comment       0x00000000       0x7c src\main.o

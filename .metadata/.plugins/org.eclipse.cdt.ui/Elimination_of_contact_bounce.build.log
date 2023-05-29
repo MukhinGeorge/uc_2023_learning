@@ -1,1 +1,17 @@
-Info: Nothing to build for Elimination_of_contact_bounce
+10:32:56 **** Incremental Build of configuration Debug for project Elimination_of_contact_bounce ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\init.c -mthumb -mcpu=cortex-m0 -std=gnu11 -DSTM32F051x8 -DHSI48_VALUE=((uint32_t)48000000) -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/STM32F0xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\init.o 
+arm-atollic-eabi-gcc -o Elimination_of_contact_bounce.elf src\init.o src\main.o src\startup_stm32f051x8.o src\system_stm32f0xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m0 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=Elimination_of_contact_bounce.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list Elimination_of_contact_bounce.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   1592	      8	    164	   1764	    6e4	Elimination_of_contact_bounce.elf
+Print size information done
+Generate listing file
+Output sent to: Elimination_of_contact_bounce.list
+Generate listing file done
+Generate build reports done
+
+10:32:57 Build Finished (took 1s.305ms)
+
